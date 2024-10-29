@@ -4,9 +4,10 @@ metadata:
   name: survey-app-service
 spec:
   selector:
-    app: survey-app # This must match the label defined in your deployment
+    app: survey-app # This should match the label in the deployment.yaml
   ports:
     - protocol: TCP
-      port: 8082 # The port that the service will expose
-      targetPort: 8081 # The port your container is listening on
-  type: NodePort # To expose your app externally. Use NodePort if not using a cloud provider.
+      port: 80 # The port exposed by the service
+      targetPort: 80 # The port your container listens on
+      nodePort: 30000 # The NodePort for external access
+  type: NodePort # Use NodePort to expose the service on a specific port
