@@ -1,8 +1,8 @@
-FROM nginx:alpine
+# Use the pre-built image from Docker Hub as the base image
+FROM jashanveer/survey-web-app:latest
 
-# Copy survey.html and student.jpg to the Nginx HTML directory
-COPY survey.html /usr/share/nginx/html/index.html
-COPY student.jpg /usr/share/nginx/html/student.jpg
+# Expose port 80 to make your web server accessible
+EXPOSE 80
 
-# Start Nginx server
+# Start the application (if needed, ensure your entry point is correct)
 CMD ["nginx", "-g", "daemon off;"]
