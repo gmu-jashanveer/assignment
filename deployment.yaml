@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: survey-app-deployment
+  name: user-form-deployment
   labels:
-    app: survey-app
+    app: user-form
 spec:
-  replicas: 3 # Number of pod replicas
+  replicas: 3
   selector:
     matchLabels:
-      app: survey-app
+      app: user-form
   template:
     metadata:
       labels:
-        app: survey-app
+        app: user-form
     spec:
       containers:
-        - name: survey-app-container
-          image: jashanveer/survey-app:latest # Your Docker image
+        - name: user-form
+          image: jashanveer/survey-web-app
           ports:
-            - containerPort: 80 # Port exposed by your container
+            - containerPort: 80
