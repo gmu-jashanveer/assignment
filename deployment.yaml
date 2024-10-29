@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: survey-app-deployment
+  labels:
+    app: survey-app
+spec:
+  replicas: 2 # Number of replicas (pods)
+  selector:
+    matchLabels:
+      app: survey-app
+  template:
+    metadata:
+      labels:
+        app: survey-app
+    spec:
+      containers:
+        - name: survey-app-container
+          image: jashanveer/survey-app:latest # Your Docker image
+          ports:
+            - containerPort: 8081 # Port exposed by your container
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
