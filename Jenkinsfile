@@ -8,7 +8,7 @@ pipeline {
         DOCKERFILE_PATH = 'Dockerfile'  // Path to Dockerfile in your repository
         DEPLOYMENT_YAML_PATH = 'deployment.yaml'  // Path to your Kubernetes deployment YAML
         SERVICE_YAML_PATH = 'service.yaml'  // Path to your Kubernetes service YAML
-        DOCKER_CREDENTIALS_ID = 'docker_cred-1'  // Jenkins credentials ID for Docker Hub
+        DOCKER_CREDENTIALS_ID = 'docker_cred'  // Jenkins credentials ID for Docker Hub
     }
 
     stages {
